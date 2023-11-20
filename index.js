@@ -1,13 +1,12 @@
-// Import packages
 const express = require("express");
-const latest = require("./api/latest");
+const latest = require("./routes/latest");
 
 // Middlewares
 const app = express();
 app.use(express.json());
 
 // Routes
-app.use("/api/latest", latest);
+app.use("/latest", latest);
 
 // connection
 const port = process.env.PORT || 9001;
