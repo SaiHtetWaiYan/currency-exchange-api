@@ -3,6 +3,7 @@
   "description": "Market rates for various currencies",
   "rates": {
     "USD": "3,400.0",
-    "EUR": "3,400.0"
+    "JPY": "2,150.0",
+    "SGD": "2,400.0"
   }
 }
