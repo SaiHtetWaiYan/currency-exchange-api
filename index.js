@@ -1,12 +1,12 @@
 const express = require("express");
-const latest = require("./routes/latest");
+const home = require("./routes/home");
 
 // Middlewares
 const app = express();
 app.use(express.json());
 
 // Routes
-app.use("/latest", latest);
+app.use("/home", home);
 
 // connection
 const port = process.env.PORT || 9001;
