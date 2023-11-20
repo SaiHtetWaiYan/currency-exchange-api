@@ -1,0 +1,7 @@
+{
+  "info": "Market Rate",
+  "description": "Market rates for various currencies",
+  "rates": {
+    "USD": "3,400.0"
+  }
+}
