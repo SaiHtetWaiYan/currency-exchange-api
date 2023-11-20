@@ -1,8 +1,6 @@
 const express = require("express");
 const fs = require("fs");
-
 const app = express();
-const port = 3000;
 
 // Middleware to parse JSON
 app.use(express.json());
@@ -18,10 +16,10 @@ app.get("/api/latest", (req, res) => {
 
     const jsonData = JSON.parse(data);
     res.json(jsonData);
+    res.setHeader("Content-Type", "text/html");
+    res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
+    res.end(`Hello! Go to item: <a href="${path}">${path}</a>`);
   });
 });
 
-// Start the server
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
-});
+module.exports = app;
