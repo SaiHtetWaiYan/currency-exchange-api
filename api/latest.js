@@ -1,12 +1,12 @@
 const express = require("express");
+const router = express.Router();
 const fs = require("fs");
 const app = express();
 
 // Middleware to parse JSON
 app.use(express.json());
 
-// API endpoint to get data from JSON file
-app.get("/api/latest", (req, res) => {
+router.get("/api/latest", async (req, res) => {
   fs.readFile("data.json", "utf8", (err, data) => {
     if (err) {
       console.error(err);
@@ -22,4 +22,4 @@ app.get("/api/latest", (req, res) => {
   });
 });
 
-module.exports = app;
+module.exports = router;
